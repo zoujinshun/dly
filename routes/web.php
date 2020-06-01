@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/','App\Client\IndexController@index');
+
+
+Route::prefix('admin')->group(function (){
+    Route::get('login',function(){
+        return 'login';
+    });
 });
